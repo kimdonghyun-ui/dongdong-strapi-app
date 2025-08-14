@@ -8,7 +8,7 @@ module.exports = ({ env }) => [
       enabled: true,
       origin: [
         env('PUBLIC_URL'), // Cloudtype 배포 주소
-        `${env('PUBLIC_URL')}/documentation`, // Cloudtype(Swagger) 배포 주소
+        // `${env('PUBLIC_URL')}/documentation`, // Cloudtype(Swagger) 배포 주소
         'http://localhost:1337', // 필요하면 로컬도 유지
       ],
     },
