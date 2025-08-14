@@ -13,8 +13,8 @@ module.exports = ({ env }) => ({
         config: {
           servers: [
             {
-              url: env('PUBLIC_URL'),
-              description: 'Cloudtype Deployment',
+                url: `${env('PUBLIC_URL')}/api`,
+                description: 'Cloudtype Deployment',
             },
           ],
         },

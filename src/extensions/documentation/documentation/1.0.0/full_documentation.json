@@ -1,4 +1,10 @@
 {
+  "servers": [
+    {
+      "url": "https://port-0-dongdong-strapi-app-meanqs9pd89552ec.sel5.cloudtype.app/api",
+      "description": "Cloudtype Deployment"
+    }
+  ],
   "openapi": "3.0.0",
   "info": {
     "version": "1.0.0",
@@ -14,7 +20,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-08-14T11:42:22.689Z"
+    "x-generation-date": "2025-08-14T18:41:42.110Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -23,12 +29,6 @@
       "users-permissions"
     ]
   },
-  "servers": [
-    {
-      "url": "http://localhost:1337/api",
-      "description": "Development server"
-    }
-  ],
   "externalDocs": {
     "description": "Find out more",
     "url": "https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html"

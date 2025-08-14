@@ -24,7 +24,7 @@ module.exports = (plugin) => {
     ctx.cookies.set('accessToken', accessToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      sameSite: 'none',
       maxAge: ms(accessTokenExpires)
     });
 
@@ -32,7 +32,7 @@ module.exports = (plugin) => {
     ctx.cookies.set('refreshToken', refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      sameSite: 'none',
       maxAge: ms(refreshTokenExpires)
     });
 
