@@ -7,4 +7,17 @@ module.exports = ({ env }) => ({
             },
         },
     },
+
+    documentation: {
+        enabled: true,
+        config: {
+          servers: [
+            {
+              url: env('PUBLIC_URL'),
+              description: 'Cloudtype Deployment',
+            },
+          ],
+        },
+    },
+
 });
