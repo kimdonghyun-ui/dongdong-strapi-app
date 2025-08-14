@@ -60,4 +60,36 @@ module.exports = {
       return ctx.internalServerError("Something went wrong");
     }
   },
+
+
+  async logout(ctx) {
+    try {
+      // 쿠키 삭제 (maxAge 0)
+      ctx.cookies.set("accessToken", "", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        maxAge: 0,
+      });
+      ctx.cookies.set("refreshToken", "", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        maxAge: 0,
+      });
+
+      return ctx.send({ message: "Logged out successfully" });
+    } catch (error) {
+      console.error(error);
+      return ctx.internalServerError("Something went wrong during logout");
+    }
+  },
+
+
+
+
+
+
+
+
 };
