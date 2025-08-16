@@ -1,5 +1,6 @@
 // config/plugins.js
 module.exports = ({ env }) => ({
+    // 유저 권한 설정
     'users-permissions': {
         config: {
             jwt: {
@@ -8,6 +9,7 @@ module.exports = ({ env }) => ({
         },
     },
 
+    // 스웨거 설정
     documentation: {
         enabled: true,
         config: {
@@ -19,5 +21,23 @@ module.exports = ({ env }) => ({
           ],
         },
     },
+
+    // 이미지 업로드 설정
+    upload: {
+        config: {
+          provider: 'cloudinary',
+          providerOptions: {
+            cloud_name: env('CLOUDINARY_NAME'),
+            api_key: env('CLOUDINARY_KEY'),
+            api_secret: env('CLOUDINARY_SECRET'),
+          },
+          actionOptions: {
+            upload: {},
+            delete: {},
+          },
+        },
+    },
+
+    
 
 });

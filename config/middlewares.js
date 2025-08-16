@@ -1,7 +1,21 @@
 module.exports = ({ env }) => [
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
+
+  // cloudinary 이미지 업로드 설정
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+        },
+      },
+    },
+  },
+
+  // cors 설정
   {
     name: 'strapi::cors',
     config: {
@@ -13,6 +27,7 @@ module.exports = ({ env }) => [
       ],
     },
   },
+  
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
