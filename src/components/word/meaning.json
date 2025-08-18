@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_word_meanings",
+  "info": {
+    "displayName": "Meaning",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "partOfSpeech": {
+      "type": "string"
+    },
+    "definitions": {
+      "displayName": "definitions",
+      "type": "component",
+      "repeatable": true,
+      "component": "definition.definitions"
+    }
+  }
+}

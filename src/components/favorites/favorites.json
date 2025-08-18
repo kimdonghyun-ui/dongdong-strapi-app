@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_favorites_favorites",
+  "info": {
+    "displayName": "favorites",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "aa": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "word_favorites",
+  "info": {
+    "singularName": "word-favorite",
+    "pluralName": "word-favorites",
+    "displayName": "WordFavorite"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "word_favorites"
+    },
+    "word": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::word.word",
+      "inversedBy": "word_favorites"
+    }
+  }
+}

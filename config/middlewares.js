@@ -19,7 +19,8 @@ module.exports = ({ env }) => [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
+      // enabled: true,
+      methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
       origin: [
         env('PUBLIC_URL'), // Cloudtype 배포 주소
         // `${env('PUBLIC_URL')}/documentation`, // Cloudtype(Swagger) 배포 주소

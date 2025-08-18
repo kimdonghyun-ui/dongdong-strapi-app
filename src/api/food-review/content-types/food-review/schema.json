@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food_reviews",
+  "info": {
+    "singularName": "food-review",
+    "pluralName": "food-reviews",
+    "displayName": "Food-review",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "place": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::place.place",
+      "inversedBy": "food_reviews"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "food_reviews"
+    }
+  }
+}

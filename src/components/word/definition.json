@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_word_definitions",
+  "info": {
+    "displayName": "Definition",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "definition": {
+      "type": "string"
+    },
+    "example": {
+      "type": "string"
+    }
+  }
+}

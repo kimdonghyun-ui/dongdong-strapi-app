@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_definition_definitions",
+  "info": {
+    "displayName": "definitions",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "definition": {
+      "type": "string"
+    },
+    "example": {
+      "type": "string"
+    }
+  }
+}

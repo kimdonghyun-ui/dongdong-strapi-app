@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "words",
+  "info": {
+    "singularName": "word",
+    "pluralName": "words",
+    "displayName": "word",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "word": {
+      "type": "string"
+    },
+    "phonetic": {
+      "type": "string"
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    "meanings": {
+      "displayName": "Meaning",
+      "type": "component",
+      "repeatable": true,
+      "component": "word.meaning"
+    },
+    "word_favorites": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::word-favorite.word-favorite",
+      "mappedBy": "word"
+    }
+  }
+}

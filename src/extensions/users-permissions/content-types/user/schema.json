@@ -67,6 +67,78 @@
     },
     "profileImage": {
       "type": "string"
+    },
+    "chat_messages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::chat-message.chat-message",
+      "mappedBy": "sender"
+    },
+    "chat_rooms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::chat-room.chat-room",
+      "mappedBy": "users_permissions_users"
+    },
+    "food_reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::food-review.food-review",
+      "mappedBy": "users_permissions_user"
+    },
+    "frees": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::free.free",
+      "mappedBy": "users_permissions_user"
+    },
+    "moods": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mood.mood",
+      "mappedBy": "users_permissions_user"
+    },
+    "places": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::place.place",
+      "mappedBy": "users_permissions_user"
+    },
+    "likedPosts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "mappedBy": "likes"
+    },
+    "transactions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transaction.transaction",
+      "mappedBy": "users_permissions_user"
+    },
+    "word_favorites": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::word-favorite.word-favorite",
+      "mappedBy": "users_permissions_user"
+    },
+    "isOnline": {
+      "type": "boolean"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "following": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "followers"
+    },
+    "followers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "following"
     }
   }
 }

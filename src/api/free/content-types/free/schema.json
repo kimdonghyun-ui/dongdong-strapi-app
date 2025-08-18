@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "frees",
+  "info": {
+    "singularName": "free",
+    "pluralName": "frees",
+    "displayName": "Free",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "time": {
+      "type": "datetime"
+    },
+    "profileImage": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "frees"
+    }
+  }
+}

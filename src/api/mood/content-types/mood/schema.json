@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "moods",
+  "info": {
+    "singularName": "mood",
+    "pluralName": "moods",
+    "displayName": "Mood",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "emoji": {
+      "type": "enumeration",
+      "enum": [
+        "laugh",
+        "smile",
+        "meh",
+        "frown",
+        "angry"
+      ]
+    },
+    "memo": {
+      "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "moods"
+    }
+  }
+}
