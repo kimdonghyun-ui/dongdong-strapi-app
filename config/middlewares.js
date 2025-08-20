@@ -22,7 +22,7 @@ module.exports = ({ env }) => [
       // enabled: true,
       methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
       origin: [
-        env('PUBLIC_URL'), // Cloudtype 배포 주소
+        // env('PUBLIC_URL'), // Cloudtype 배포 주소
         // `${env('PUBLIC_URL')}/documentation`, // Cloudtype(Swagger) 배포 주소
         'http://localhost:3000', // 필요하면 로컬도 유지
         'https://my-budget-app-steel.vercel.app', // [나만의 가계부] 
