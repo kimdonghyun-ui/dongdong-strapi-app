@@ -52,6 +52,7 @@ module.exports = {
         secure: process.env.NODE_ENV === "production",
         sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         maxAge: ms(accessTokenExpires) + ms("5m"), // 억세스토큰 만료시간 보다 쿠키 만료시간은 길어야 jwt 리플래시 토큰 통해 억세스 토큰 재발급 로직이 유지되기때문에 추가 시간 준것임
+        domain: process.env.NODE_ENV === 'production' ? '.dongdong-ui.com' : undefined,
       });
 
       return ctx.send({ message: "Access token refreshed" });
@@ -70,12 +71,14 @@ module.exports = {
         secure: process.env.NODE_ENV === "production",
         sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         maxAge: 0,
+        domain: process.env.NODE_ENV === 'production' ? '.dongdong-ui.com' : undefined,
       });
       ctx.cookies.set("refreshToken", "", {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         maxAge: 0,
+        domain: process.env.NODE_ENV === 'production' ? '.dongdong-ui.com' : undefined,
       });
 
       return ctx.send({ message: "Logged out successfully" });

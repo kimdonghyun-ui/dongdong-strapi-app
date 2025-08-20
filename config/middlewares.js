@@ -36,6 +36,7 @@ module.exports = ({ env }) => [
         'https://my-food-app.dongdong-ui.com', // [맛집 찾기 앱]
         'https://my-instagram-app.dongdong-ui.com', // [인스타그램 클론 앱]
       ],
+      credentials: true,
     },
   },
   
