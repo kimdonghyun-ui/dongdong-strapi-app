@@ -24,7 +24,10 @@ module.exports = ({ env }) => [
       origin: [
         // env('PUBLIC_URL'), // Cloudtype 배포 주소
         // `${env('PUBLIC_URL')}/documentation`, // Cloudtype(Swagger) 배포 주소
-        'http://localhost:3000', // 필요하면 로컬도 유지
+        'https://dongdong-ui.com',
+        'https://www.dongdong-ui.com',
+        'https://api.dongdong-ui.com', // [Strapi API 도메인]
+        'http://localhost:3000', // [로컬 도메인]
         'https://my-budget-app-steel.vercel.app', // [나만의 가계부] 
         'https://my-word-app.vercel.app', // [영어 단어 학습]
         'https://my-daylio-app.vercel.app', // [나만의 감정 기록]
