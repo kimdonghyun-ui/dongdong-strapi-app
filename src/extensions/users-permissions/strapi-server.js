@@ -25,13 +25,14 @@ module.exports = (plugin) => {
     const url = new URL(origin);
     const cookieDomain = url.hostname; // 예: "my-budget-app.dongdong-ui.com"
     
-
+    console.log('cookieDomain', cookieDomain);
 
     // Access Token 쿠키 (쿠키 수명도 env 적용)
     ctx.cookies.set('accessToken', accessToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+      // sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+      sameSite: "Lax",
       maxAge: ms(accessTokenExpires) + ms("5m"), // 억세스토큰 만료시간 보다 쿠키 만료시간은 길어야 jwt 리플래시 토큰 통해 억세스 토큰 재발급 로직이 유지되기때문에 추가 시간 준것임
       domain: process.env.NODE_ENV === 'production' ? cookieDomain : undefined,
     });
@@ -40,7 +41,8 @@ module.exports = (plugin) => {
     ctx.cookies.set('refreshToken', refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+      // sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+      sameSite: "Lax",
       maxAge: ms(refreshTokenExpires),
       domain: process.env.NODE_ENV === 'production' ? cookieDomain : undefined,
     });
