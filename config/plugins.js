@@ -32,7 +32,9 @@ module.exports = ({ env }) => ({
             api_secret: env('CLOUDINARY_SECRET'),
           },
           actionOptions: {
-            upload: {},
+            upload: {
+              sizeLimit: 10 * 1024 * 1024, // 10MB까지 허용
+            },
             delete: {},
           },
         },
